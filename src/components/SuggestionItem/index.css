@@ -2,25 +2,30 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  margin-top: 16px;
   list-style-type: none;
 }
 
 .arrow {
-  height: 14px;
+  height: 16px;
   cursor: pointer;
+  outline: none;
+  margin-top: 0px;
+  margin-right: 10px;
 }
 
 @media screen and (min-width: 768px) {
   .arrow {
-    height: 20px;
+    height: 24px;
+    align-self: center;
   }
 }
 
 .suggestion {
   font-family: 'Roboto';
-  font-size: 13px;
+  font-size: 14px;
   color: #64748b;
+  margin: 0px;
 }
 
 @media screen and (min-width: 768px) {

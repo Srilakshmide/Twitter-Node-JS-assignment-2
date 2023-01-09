@@ -1,20 +1,20 @@
 import './index.css'
 
 const SuggestionItem = props => {
-  const {suggestion, onSuggestion} = props
+  const {suggestion, onFullSuggestion} = props
 
-  const onClickSuggestion = () => {
-    onSuggestion(suggestion)
+  const onClickFullSuggestion = () => {
+    onFullSuggestion(suggestion)
   }
 
   return (
     <li className="list-container">
       <p className="suggestion">{suggestion}</p>
       <img
-        src="https://assets.ccbp.in/frontend/react-js/diagonal-arrow-left-up.png"
         className="arrow"
+        src="https://assets.ccbp.in/frontend/react-js/diagonal-arrow-left-up.png"
         alt="arrow"
-        onClick={onClickSuggestion}
+        onClick={onClickFullSuggestion}
       />
     </li>
   )

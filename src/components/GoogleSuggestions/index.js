@@ -3,23 +3,26 @@ import SuggestionItem from '../SuggestionItem'
 import './index.css'
 
 class GoogleSuggestions extends Component {
-  state = {searchInput: ''}
-
-  onChangeSearchInput = event => {
-    this.setState({searchInput: event.target.value})
+  state = {
+    searchInput: '',
   }
 
-  onSuggestion = suggestion => {
+  onChangeInput = event => {
+    this.setState({
+      searchInput: event.target.value,
+    })
+  }
+
+  onFullSuggestion = suggestion => {
     this.setState({searchInput: suggestion})
   }
 
   render() {
     const {searchInput} = this.state
     const {suggestionsList} = this.props
-    const filteredList = suggestionsList.map(eachItem =>
+    const filteredList = suggestionsList.filter(eachItem =>
       eachItem.suggestion.toLowerCase().includes(searchInput.toLowerCase()),
     )
-
     return (
       <div className="container">
         <img
@@ -47,7 +50,7 @@ class GoogleSuggestions extends Component {
               <SuggestionItem
                 key={eachItem.id}
                 suggestion={eachItem.suggestion}
-                onSuggestion={this.onSuggestion}
+                onFullSuggestion={this.onFullSuggestion}
               />
             ))}
           </ul>
